@@ -1,5 +1,5 @@
 import "./AlertCard.css";
-
+console.log("AUDIO URL:", alert.audio_url);
 function AlertCard({ alert }) {
   return (
     <div className="alert-card">
