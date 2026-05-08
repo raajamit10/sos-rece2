@@ -1,0 +1,179 @@
+/* ---------------- ROOT VARIABLES ---------------- */
+:root {
+  --bg-main: #050505;
+  --bg-overlay: rgba(255, 255, 255, 0.04);
+  --grid-color: rgba(255, 255, 255, 0.08);
+
+  --card-bg: rgba(15, 15, 15, 0.75);
+  --card-border: rgba(255, 255, 255, 0.08);
+
+  --accent: #ff4d6d;        /* emergency red */
+  --success: #00ff88;
+
+  --text-main: #ffffff;
+  --text-muted: #b0b0b0;
+
+  --radius-lg: 18px;
+  --radius-sm: 12px;
+}
+
+/* ---------------- BODY ---------------- */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-main);
+
+  /* subtle grid background */
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ---------------- DASHBOARD ---------------- */
+.dashboard-container {
+  padding: 40px 24px;
+  max-width: 1400px;
+  margin: auto;
+  min-height: 100vh;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #ff113d, #ff7513);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ---------------- EMPTY STATE ---------------- */
+.empty,
+.no-alerts {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+/* ---------------- GRID ---------------- */
+.alerts-grid,
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* ---------------- CARD ---------------- */
+.card,
+.alert-card {
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--card-border);
+  padding: 22px;
+  word-wrap: break-word;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.alert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8);
+}
+
+/* ---------------- CARD HEADER ---------------- */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+/* ---------------- BADGE ---------------- */
+.badge {
+  background: linear-gradient(135deg, var(--accent), #ff7a18);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ---------------- TIME ---------------- */
+.time {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ---------------- CARD SECTIONS ---------------- */
+.section {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.value {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-main);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* ---------------- AUDIO ---------------- */
+audio {
+  width: 100%;
+  margin-top: 6px;
+  border-radius: var(--radius-sm);
+  outline: none;
+}
+
+/* ---------------- MAP LINK ---------------- */
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.map-link:hover {
+  color: #ff7a88;
+  text-decoration: underline;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 20px 16px;
+  }
+
+  .dashboard-title {
+    font-size: 28px;
+  }
+
+  .alerts-grid,
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
